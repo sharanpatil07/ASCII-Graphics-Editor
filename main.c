@@ -72,6 +72,15 @@ void modifyRectangle() {
     drawRectangle(15, 5, 8, 3);
 }
 
+void deleteRectangle() {
+    int i, j;
+
+    for(i = 5; i < 9; i++) {
+        for(j = 5; j < 15; j++) {
+            canvas[i][j] = ' ';
+        }
+    }
+}
 int main() {
 
     int choice;
@@ -88,13 +97,19 @@ int main() {
         printf("5. Display Canvas\n");
         printf("6. Clear Canvas\n");
         printf("7. Modify Rectangle\n");
-        printf("8. Exit\n");
+       printf("8. Delete Rectangle\n");
+       printf("9. Exit\n");
 
         printf("Enter choice: ");
         scanf("%d", &choice);
 
         if(choice == 1) {
-            drawRectangle(5, 5, 10, 4);
+            int x, y, width, height;
+
+printf("Enter x y width height: ");
+scanf("%d %d %d %d", &x, &y, &width, &height);
+
+drawRectangle(x, y, width, height);
         }
         else if(choice == 2) {
             drawLine(2, 2, 15, 2);
@@ -116,10 +131,14 @@ int main() {
             modifyRectangle();
             printf("Rectangle Modified!\n");
         }
-        else if(choice == 8) {
-            printf("Exiting...\n");
-            break;
-        }
+       else if(choice == 8) {
+    deleteRectangle();
+    printf("Rectangle Deleted!\n");
+}
+else if(choice == 9) {
+    printf("Exiting...\n");
+    break;
+}
         else {
             printf("Invalid Choice!\n");
         }
