@@ -47,31 +47,36 @@ int main() {
     initializeCanvas();
 
     while(1) {
-        printf("\n===== 2D Graphics Editor =====\n");
-        printf("1. Draw Rectangle\n");
-        printf("2. Display Canvas\n");
-        printf("3. Clear Canvas\n");
-        printf("4. Exit\n");
-        printf("Enter choice: ");
-        scanf("%d",&choice);
+       printf("\n===== 2D Graphics Editor =====\n");
+printf("1. Draw Rectangle\n");
+printf("2. Draw Line\n");
+printf("3. Display Canvas\n");
+printf("4. Clear Canvas\n");
+printf("5. Exit\n");
 
-        if(choice==1) {
-            int x,y,w,h;
-            printf("Enter x y width height: ");
-            scanf("%d%d%d%d",&x,&y,&w,&h);
-            drawRectangle(x,y,w,h);
-        }
-        else if(choice==2) {
-            displayCanvas();
-        }
-        else if(choice==3) {
-            initializeCanvas();
-            printf("Canvas Cleared!\n");
-        }
-        else if(choice==4) {
-            break;
-        }
+printf("Enter choice: ");
+scanf("%d", &choice);
+
+if(choice == 1) {
+    drawRectangle(5, 5, 10, 4);
+}
+else if(choice == 2) {
+    drawLine(2, 2, 15, 2);
+}
+else if(choice == 3) {
+    displayCanvas();
+}
+else if(choice == 4) {
+    initializeCanvas();
+    printf("Canvas Cleared!\n");
+}
+else if(choice == 5) {
+    printf("Exiting...\n");
+    break;
+}
+else {
+    printf("Invalid Choice!\n");
+}
     }
-
-    return 0;
+return 0;
 }
