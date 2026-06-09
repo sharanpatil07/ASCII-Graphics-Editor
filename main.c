@@ -1,6 +1,5 @@
 // Updated by SharanPatil
 #include <stdio.h>
-
 #define ROWS 20
 #define COLS 40
 
